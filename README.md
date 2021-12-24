@@ -14,3 +14,14 @@ inspirational color [palette](https://colorhunt.co/palette/4c3f919145b6b958a5ff5
 
 ![img-2](desktop_modal_active.png)
 
+---
+
+https://stackoverflow.com/questions/55943773/stripe-api-error-received-unknown-parameter-source
+
+read this later
+
+### TODO
+
+* make modal functional with card
+
+* future feature: create custom page for logging payment and msg within the application somehow!

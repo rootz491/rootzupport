@@ -16,15 +16,22 @@ const items = {
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { c, msg } = req.body;
+        console.log(req.body);
 
         //  validations
+        if (!(c && msg)) {
+            res.statusCode = 400;
+            res.json({ error: 'not enough input params' });
+            return;
+        }
+
         if (msg.length > 150) {
             res.statusCode = 400;
             res.json({ error: 'Message too long' });
             return;
         }
 
-        if (c != 1 || c != 2) {
+        if (c < 0 || c > 2) {
             res.statusCode = 400;
             res.json({ error: 'Invalid option' });
             return;
@@ -41,16 +48,27 @@ export default async function handler(req, res) {
             quantity: 1
         }];
 
-        const session = await stripe.checkout.sessions.create({
-            payment_method_types: ['card'],
-            line_items: lineItems,
-            mode: 'payment',
-            description: msg,
-            success_url: `${process.env.HOST_URL}/success`,
-            cancel_url: `${process.env.HOST_URL}/cancel`,
-        });
+        try {
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ['card'],
+                line_items: lineItems,
+                mode: 'payment',
+                success_url: `${process.env.HOST_URL}/success`,
+                cancel_url: `${process.env.HOST_URL}/cancel`,
+                payment_intent_data: {    
+                    metadata: {
+                        message: msg
+                    }
+                }
+            });
+    
+            res.json({ url: session.url });
+            
+        } catch (error) {
+            console.log(error);
+            res.status(500).send(error.message);
+        }
 
-        res.json({ sessionId: session.id });
     }
     else {
         res.status(405).send('Please use POST method');

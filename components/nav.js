@@ -2,7 +2,7 @@
 export default function Nav() {
     return (
         <nav>
-            <label for="menu" className="menu-btn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAKElEQVRIiWNgGAXDHjAisf/TwmwmKhs6CgYhGE1Fo4ByMJqKRsEQAADWCQMKYvEFtQAAAABJRU5ErkJggg=="/></label>
+            <label htmlFor="menu" className="menu-btn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAKElEQVRIiWNgGAXDHjAisf/TwmwmKhs6CgYhGE1Fo4ByMJqKRsEQAADWCQMKYvEFtQAAAABJRU5ErkJggg=="/></label>
             <input type="checkbox" id="menu" name="menu" hidden/>
             <div id="navWrapper">
                 <a target="_blank" href="https://karansh.codes">portfolio</a>
@@ -25,7 +25,6 @@ export default function Nav() {
                 }
                 label {
                     cursor: pointer;
-                    // display: none;
                     visibility: hidden;
                 }
                 nav a {

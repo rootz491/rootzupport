@@ -22,6 +22,8 @@ read this later
 
 ### TODO
 
-* make modal functional with card
+* make modal functional with card and position it properly.
+
+* create `/success` and `/cancel` page coz after payment, user is going to redirect to one of these.
 
 * future feature: create custom page for logging payment and msg within the application somehow!

@@ -36,7 +36,7 @@ export default function Cards() {
 
             <style>{`
                 .border {
-                    outline: 4px solid #4C3F91;
+                    border: 4px solid #4C3F91;
                     border-radius: 10px;
                 }
                 .cards {

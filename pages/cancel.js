@@ -1,5 +1,6 @@
 // import HomeBtn from "../components/homeBtn.Js";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function Cancel() {
     const router = useRouter();
@@ -10,6 +11,10 @@ export default function Cancel() {
 
     return (
         <div id="cancel">
+            <Head>
+				<title>payment cancelled</title>
+			</Head>
+
 
             <div id="wrapper">
                 <div><img src="/plant.png" alt="plant img" /></div>

@@ -2,7 +2,7 @@
 
 A **stripe** x **nextJs** project as an implementation of Donation / support me page.
 
->   alternative to `Buy me a coffee`, made by *yours truly*
+> alternative to `Buy me a coffee`, made by *yours truly*
 
 figma design [here](https://www.figma.com/file/We5Rw9527qZNjQVqh2va1G/rootzupport?node-id=0%3A1) by [nik](https://www.twitter.com/iamn1khil)
 

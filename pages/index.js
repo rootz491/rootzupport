@@ -1,7 +1,6 @@
 import Banner from "../components/banner"
 import Cards from "../components/cards"
 import Nav from "../components/nav"
-import Modal from "../components/modal"
 
 export default function Home() {
     return (
@@ -9,7 +8,6 @@ export default function Home() {
 			<Nav />
 			<Banner />
 			<Cards />
-			<Modal c={2} />
 
 			<style>{`
 				* {

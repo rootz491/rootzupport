@@ -1,13 +1,30 @@
+import { useState, useEffect } from "react";
 import Card from "./card";
+import Modal from "./modal";
 
 export default function Cards() {
+    const [c, setC] = useState();
+
+    useEffect(() => {
+
+    }, [c])
+
+    const updateC = (num) => {
+        console.log(num);
+        setC(num);
+    }
     return (
         <div className="cards">
             <h1>You Support Can Be</h1>
             <div id="wrapper">
-                <Card illu="illu_1.png" bg="bg_1.png" txt="A cup of Coffee  $5" />
-                <Card illu="illu_2.png" bg="bg_2.png" txt="booster in studies   $12" />
+                <div onClick={()=>updateC(1)}>
+                    <Card illu="illu_1.png" bg="bg_1.png" txt="A cup of Coffee  $5" />
+                </div>
+                <div onClick={()=>updateC(2)}>
+                    <Card illu="illu_2.png" bg="bg_2.png" txt="booster in studies   $12" />
+                </div>
             </div>
+            { c ? <Modal c={c} /> : null}
 
 
             <style>{`

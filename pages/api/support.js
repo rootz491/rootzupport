@@ -19,11 +19,11 @@ export default async function handler(req, res) {
         console.log(req.body);
 
         //  validations
-        if (!(c && msg)) {
-            res.statusCode = 400;
-            res.json({ error: 'not enough input params' });
-            return;
-        }
+        // if (!(c && msg)) {
+        //     res.statusCode = 400;
+        //     res.json({ error: 'not enough input params' });
+        //     return;
+        // }
 
         if (msg.length > 150) {
             res.statusCode = 400;
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
                 mode: 'payment',
                 success_url: `${process.env.HOST_URL}/success`,
                 cancel_url: `${process.env.HOST_URL}/cancel`,
-                payment_intent_data: {    
+                payment_intent_data: {
                     metadata: {
                         message: msg
                     }

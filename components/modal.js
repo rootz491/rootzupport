@@ -17,9 +17,6 @@ export default function Modal({ c }) {
     }, [c]);
     
     async function makeReq() {
-
-        
-
         if (char > 150) {
             alert('sorry, message length exceeded limit. Please shorten the message!');
         }
@@ -49,9 +46,7 @@ export default function Modal({ c }) {
     function update(e) {
         let pTag = charElement.current;
         setMsg(e.target.value);
-        setChar(e.target.value.length);
-        // console.log(msg);
-        // console.log(char);
+        setChar(e.target.value.length);;
         if (char > 150) {
             pTag.style.color = 'red';
         } else {
@@ -75,7 +70,7 @@ export default function Modal({ c }) {
                 ></textarea>
                 <div>
                     <button disabled={wait} onClick={makeReq}>
-                        <span class="text">proceed</span>
+                        <span className="text">proceed</span>
                     </button>
                 </div>
             </div>
